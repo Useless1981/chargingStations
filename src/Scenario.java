@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Stores data for test scenarios
  */
-public final class TestSettings {
+public final class Scenario {
     final int numberOfStationsToPlace;
     final Position base;
     final List<Position> homes;
@@ -18,7 +18,7 @@ public final class TestSettings {
      * @param base Double[]
      * @param homes List<Position>
      */
-    private TestSettings(int numberOfStationsToPlace, Position base, List<Position> homes) {
+    private Scenario(int numberOfStationsToPlace, Position base, List<Position> homes) {
         this.numberOfStationsToPlace = numberOfStationsToPlace;
         this.base = base;
         this.homes = homes;
@@ -30,13 +30,13 @@ public final class TestSettings {
      * @return TestSettings
      * @throws IOException when the file is not readable
      */
-    public static TestSettings loadSettings(String sourceFile) throws IOException {
+    public static Scenario loadSettings(String sourceFile) throws IOException {
         String[] lines = readFile(sourceFile).split("\n");
         List<Position> homes = new LinkedList<>();
         for (int i = 2; i < lines.length; i++) {
             homes.add(positionFromString(lines[i]));
         }
-        return new TestSettings(Integer.parseInt(String.valueOf(lines[0].charAt(0))), positionFromString(lines[1]), homes);
+        return new Scenario(Integer.parseInt(String.valueOf(lines[0].charAt(0))), positionFromString(lines[1]), homes);
     }
 
     /**

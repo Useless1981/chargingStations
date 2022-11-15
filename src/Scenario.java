@@ -60,6 +60,10 @@ public final class Scenario {
         return Position.unscored(Double.parseDouble(valuesAsString[0]), Double.parseDouble(valuesAsString[1]));
     }
 
+    /**
+     * toString()-method for Scenario class
+     * @return String: Scenario as String
+     */
     public String toString() {
         return "Stations to place: " + numberOfStationsToPlace + "\nBase: " + base + "\nHomes:\n" + homes;
     }

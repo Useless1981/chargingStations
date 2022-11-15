@@ -11,7 +11,7 @@ public class PositionEvaluator {
      * @return int: evaluated score of given position
      */
     public static int evaluatePosition(Position position, Scenario scenario) { return -1; } //TODO: implement scoring positions
-    // quadratische Abstaende basisstation + quadratische abstaende homes + -1*(verhaeltnis von bestverteiltem einzugsbereich zu tatsaechlich)
+    // quadratischer Abstand zur basisstation (Normalisiert) + quadratische Abstaende homes/anzahl + -1*(verhaeltnis von bestverteiltem einzugsbereich zu tatsaechlich)
 
     public static List<Position> evaluateAll(List<Position> positions, Scenario scenario) {
         return positions.stream().map(position -> Position.scorePostion(position, evaluatePosition(position, scenario))).toList();

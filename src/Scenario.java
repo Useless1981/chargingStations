@@ -1,3 +1,5 @@
+import position.Position;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +18,7 @@ public final class Scenario {
      * Private constructor od settings object
      * @param numberOfStationsToPlace int
      * @param base Double[]
-     * @param homes List<Position>
+     * @param homes List<position.Position>
      */
     private Scenario(int numberOfStationsToPlace, Position base, List<Position> homes) {
         this.numberOfStationsToPlace = numberOfStationsToPlace;

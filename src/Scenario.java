@@ -57,7 +57,7 @@ public final class Scenario {
      */
     private static Position positionFromString(String positionString) {
         String[] valuesAsString = positionString.split("\\s+");
-        return Position.unscored(Double.parseDouble(valuesAsString[0]), Double.parseDouble(valuesAsString[1]));
+        return Position.create(Double.parseDouble(valuesAsString[0]), Double.parseDouble(valuesAsString[1]));
     }
 
     /**
